@@ -2,43 +2,13 @@ from web3 import Web3
 from eth_account import Account
 import time
 import sys
-import os
-
-# Fungsi untuk menampilkan teks di tengah layar
-def center_text(text):
-    terminal_width = os.get_terminal_size().columns
-    lines = text.splitlines()
-    centered_lines = [line.center(terminal_width) for line in lines]
-    return "\n".join(centered_lines)
-
-# ASCII art untuk VIKITOSHI
-ascii_art = """
- __     ___ _    _ _            _     _ 
- \ \   / (_) | _(_) |_ ___  ___| |__ (_)
-  \ \ / /| | |/ / | __/ _ \/ __| '_ \| |
-   \ V / | |   <| | || (_) \__ \ | | | |
-    \_/  |_|_|\_\_|\__\___/|___/_| |_|_|
-                                         
-"""
-
-# Deskripsi teks
-description = """
-Bot Auto Bridge  https://bridge.t1rn.io/
-"""
-
-
-print("\033[92m" + center_text(ascii_art) + "\033[0m")
-print(center_text(description))
-
-# Tambahkan jarak dua paragraf setelah deskripsi teks
-print("\n\n")
 
 # Detail jaringan
-private_key = '#'
+private_key = '#'  # Ganti dengan private key Anda
 rpc_url = 'https://sepolia.optimism.io'
 chain_id = 11155420
 contract_address = '0xF221750e52aA080835d2957F2Eed0d5d7dDD8C38'
-my_address = '#'
+my_address = '#'  # Ganti dengan address Anda
 
 # Koneksi ke jaringan
 web3 = Web3(Web3.HTTPProvider(rpc_url))
@@ -62,7 +32,7 @@ def send_bridge_transaction():
             'to': contract_address,
             'from': my_address,
             'data': data,
-            'value': web3.to_wei(0.01, 'ether')  # Mengirim 0.0001 ETH
+            'value': web3.to_wei(0.01, 'ether')  # Mengirim 0.01 ETH
         })
         gas_limit = gas_estimate + 10000  # Tambahkan buffer gas
     except Exception as e:
@@ -73,8 +43,8 @@ def send_bridge_transaction():
     transaction = {
         'nonce': nonce,
         'to': contract_address,
-        'value': web3.to_wei(0.01, 'ether'),  # Mengirim 0.0001 ETH
-        'gas': gas_limit,  # Gunakan gas limit yang diestimasi
+        'value': web3.to_wei(0.01, 'ether'),  # Mengirim 0.01 ETH
+        'gas': gas_limit,
         'gasPrice': web3.eth.gas_price,
         'chainId': chain_id,
         'data': data
@@ -104,7 +74,7 @@ try:
         if tx_hash:
             successful_txs += 1
             print(f"Tx Hash: {tx_hash} | Total Tx Sukses: {successful_txs}")
-        time.sleep(60)  # Delay 20 detik setiap transaksi
+        time.sleep(60)  # Delay 60 detik setiap transaksi
 except KeyboardInterrupt:
     print("\nScript dihentikan oleh pengguna.")
     print(f"Total transaksi sukses: {successful_txs}")
