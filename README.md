@@ -1,5 +1,3 @@
-Berikut adalah README yang telah diperbaiki untuk proyek **TirnBot**:
-
 ---
 
 # TirnBot - Bot Auto Bridge dari Optimism Sepolia ke antar chain Sepolia lainnya
