@@ -7,7 +7,6 @@ TirnBot adalah sebuah bot otomatis yang memudahkan proses bridging token dari ja
 ## Fitur
 - **Auto Bridging:** Mengotomatisasi seluruh proses bridging token dari Arbitrum Sepolia ke Base Sepolia.
 - **Real-time Transaction Feedback:** Menampilkan hasil transaksi yang berhasil dengan informasi hash transaksi secara real-time.
-- **Koneksi Aman:** Menggunakan private key yang dienkripsi untuk memastikan keamanan transaksi.
 
 ## Persyaratan Sistem
 - Python 3.7 atau lebih tinggi
@@ -19,13 +18,13 @@ TirnBot adalah sebuah bot otomatis yang memudahkan proses bridging token dari ja
 1. **Clone repository ini** ke dalam direktori lokal Anda:
 
    ```bash
-   git clone https://github.com/vinskasenda/TirnBot.git
+   git clone https://github.com/hexarin/t1rn.git
    ```
 
 2. **Masuk ke direktori proyek**:
 
    ```bash
-   cd TirnBot
+   cd t1rn
    ```
 
 3. **Install dependencies** yang diperlukan untuk menjalankan bot tanpa masalah:
