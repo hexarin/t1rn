@@ -50,7 +50,7 @@ TirnBot adalah sebuah bot otomatis yang memudahkan proses bridging token dari ja
 Setelah melakukan konfigurasi, Anda dapat menjalankan bot dengan perintah berikut:
 
    ```bash
-   python bot.py
+   python bridge.py
    ```
 
 Bot akan mulai berjalan dan secara otomatis melakukan bridging dari Arbitrum Sepolia ke Base Sepolia. Anda dapat memantau hasil transaksi di terminal dengan tampilan hash transaksi yang berhasil.
